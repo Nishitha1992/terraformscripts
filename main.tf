@@ -19,18 +19,6 @@ provider "azurerm" {
     tenant_id       = "6a1fb993-1866-44b7-ae78-883af9b9ad42"
 }
 
-terraform {
-  backend "azurerm" {
-    storage_account_name = "tfpractice"
-    container_name       = "practice1"
-    key                  = "nishitha"
-
-    # rather than defining this inline, the Access Key can also be sourced
-    # from an Environment Variable - more information is available below.
-    access_key = "tQoaF1HAeBcU+ChD3fzQ8Ud0N3zesGjnIj79mdxRi4xAHlHzGNH1tolFAGiu2MSU04LWWfCoWDIT+ASt84Te9g=="
-  }
-}
-
 resource "azurerm_resource_group" "rg1" {
   name     = "${var.rgname}"
   location = "${var.location}"
